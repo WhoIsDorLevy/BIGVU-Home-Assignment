@@ -1,0 +1,2 @@
+rootProject.name = "BIGVU Home Assignment"
+include ':app'

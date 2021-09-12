@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dp"
+    android:background="@drawable/round_corners">
+
+    <!-- ImageView which is display
+         to the left of list_item -->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:clickable="true"
+        android:focusable="true"
+        tools:srcCompat="@drawable/loading_image_background"
+        android:background="@drawable/round_corners"/>
+
+    <!-- LinearLayout to hold title and subtite -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="4dp">
+
+        <!-- TextView to display title -->
+        <TextView
+            android:id="@+id/authorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            tools:text="@string/textview_place_holder" />
+
+        <!-- TextView to display subtitle -->
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:textSize="18sp"
+            tools:text="@string/long_textview_place_holder" />
+
+    </LinearLayout>
+</LinearLayout>
