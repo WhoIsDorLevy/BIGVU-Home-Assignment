@@ -1,6 +1,5 @@
 package com.example.bigvuhomeassignment
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,11 +30,16 @@ class SecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as MainActivity).hideKeyboardIfShown()
+
+        //get arguments
         val args = arguments?.let { SecondFragmentArgs.fromBundle(it) }
         val description = args?.description
         val author = args?.author
         val text = args?.text
         val videoLink = args?.videoLink
+
+        //set arguments on views
         binding.authorTextView2.text = getString(R.string.author_holder, author)
         binding.descriptionTextView2.text = getString(R.string.text_holder, description)
         binding.textTextView.text = getString(R.string.text_holder, text)
@@ -43,17 +47,6 @@ class SecondFragment : Fragment() {
         binding.videoView.start()
     }
 
-//    fun hideKeyboardIfShown(){
-//        val imm = activity?.getSystemService(Activity.INPUT_METHOD_SERVICE)
-//        //Find the currently focused view, so we can grab the correct window token from it.
-//        var currFocusView = activity?.currentFocus
-//        //If no view currently has focus, create a new one, just so we can grab a window token from it
-//        if (currFocusView == null){
-//            currFocusView = View(activity)
-//        }
-//
-//
-//    }
 
     override fun onDestroyView() {
         super.onDestroyView()

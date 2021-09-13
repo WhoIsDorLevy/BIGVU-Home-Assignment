@@ -15,10 +15,10 @@
         android:id="@+id/imageView"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:background="@drawable/round_corners"
         android:clickable="true"
         android:focusable="true"
-        tools:srcCompat="@drawable/loading_image_background"
-        android:background="@drawable/round_corners"/>
+        tools:srcCompat="@drawable/ic_launcher_foreground" />
 
     <!-- LinearLayout to hold title and subtite -->
     <LinearLayout
