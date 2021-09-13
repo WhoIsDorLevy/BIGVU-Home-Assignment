@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.navigation.findNavController
 import com.squareup.picasso.Picasso
+import java.lang.Exception
 
 class WorkshopListAdapter(
     private val mActivity: MainActivity,
@@ -43,7 +44,20 @@ class WorkshopListAdapter(
         val currData = filteredData[position]
         author.text = currData[0]
         description.text = currData[1]
-        Picasso.get().load(currData[2]).into(image)
+        Picasso.get().load(currData[2]).into(image, object :com.squareup.picasso.Callback{
+            val progress: ProgressBar = listItem.findViewById(R.id.progressBarImage)
+            override fun onSuccess() {
+
+                progress.visibility = View.INVISIBLE
+            }
+
+            override fun onError(e: Exception?) {
+                progress.visibility = View.INVISIBLE
+                val errorImage: ImageView = listItem.findViewById(R.id.errorImageView)
+                errorImage.visibility = View.VISIBLE
+            }
+
+        })
 
         //set onClick to move to next fragment
         val onClickListener: (View) -> Unit = { view ->
