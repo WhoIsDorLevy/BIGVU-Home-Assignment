@@ -1,4 +1,4 @@
-#BIGVU Workshop Android App
+# BIGVU Workshop Android App
 My home assignment, given to me by BIGVU.
 
 The app shows a Workshop list of BIGVU, with images and videos.
